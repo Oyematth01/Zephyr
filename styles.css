@@ -66,6 +66,7 @@ header nav .nav_item_container .nav_item {
 }
 
 .nav_item li a{
+	color: #494a5b;
 	text-decoration: none;
 }
 
@@ -79,18 +80,57 @@ header nav .nav_item_container .nav_item {
 	min-height: 100vh;
 }
 
+.hero_content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 14rem;
+}
+
 .hero_content h6{
 	color: white;
-	font-size: 14px;
-    line-height: 30px;
+	font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 1.4px;
-    font-weight: 450;
+    font-weight: 455;
 }
 
 .hero_content h2{
+	margin: 0;
 	color: white;
 	font-size: 60px;
-    line-height: 60px;
     font-weight: 700;
+	text-transform: capitalize;
+	margin-top: 20px;
+}
+
+.hero_content p{
+	font-weight: 300;
+    font-size: 17px;
+    line-height: 25px;
+    padding: 10px 0px 20px;
+	color: white;
+	margin-top: 30px;
+}
+
+.hero_btn_area{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 4rem;
+}
+.hero_btn{
+	background-color: #f3c300;
+	font-size: 14px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+	text-decoration: none;
+	height: 3rem;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 10rem;
+	padding-left: 30px;
+	padding-right: 30px;
 }
