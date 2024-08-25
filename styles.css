@@ -134,3 +134,26 @@ header nav .nav_item_container .nav_item {
 	padding-left: 30px;
 	padding-right: 30px;
 }
+
+.booking_area{
+	background-color: aqua;
+	margin-top: 10%;
+}
+
+.booking_table{
+	background: #04091e;
+	display: flex;
+	padding: 40px 50px 30px;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-left: 8%;
+	margin-right: 8%;
+
+}
+
+.booking_table h2{
+	font-size: 24px;
+    line-height: 30px;
+    color: #fff;
+    text-transform: uppercase;
+}
