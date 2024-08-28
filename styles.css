@@ -81,9 +81,7 @@ header nav .nav_item_container .nav_item {
 }
 
 .hero_content{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	text-align: center;
 	margin-top: 14rem;
 }
 
@@ -248,16 +246,11 @@ select option{
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	text-align: center;
 }
 
 .accommodation_text_area{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	text-align: center;
 }
 .accommodation_text_area h2{
 	color: #24231e;
@@ -332,20 +325,90 @@ select option{
 }
 
 .facilities_area{
+	position: relative;
 	background-image: url('images/facilites_bg.jpg.webp');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: scroll;
 	background-position-x: center;
 	background-position-y: 0px;
-	opacity: 0.15;
-    height: 125%;
+	background-color: initial;
+	background-attachment: scroll;
+    background-origin: initial;
+	background-clip: initial;
+	height: 125%;
+	opacity: 1.5;
+	font-size: 14px;
+	font-weight: 300;
+}
+
+.overlay{
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+	height: 100%;
+    bottom: 0;
+    z-index: 1;
+	background-color: rgba(6, 8, 37, 0.849)
+
+
 }
 
 .facilities_area_content{
+	position: relative;
+	z-index: 2;
 	width: 100%;
+	padding: 0px 15px;
+	/* margin: 0px 86.5px; */
+
+}
+
+.facilities_content{
+	margin-bottom: 75px;
+	padding-top: 95px;
+	text-align: center;
+}
+
+.facilities_content h2{
+	font-size: 45px;
+	font-weight: 700;
+	color: #fff;
+	text-size-adjust: 100%;
+	margin-bottom: 25px;
+}
+
+.facilities_content p{
+	font-size: 18px;
+	line-height: 30px;
+	color: #777777;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+}
+
+.zephyr_services{
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -15px;
+	margin-left: -15px;
+	margin-bottom: -30px;
+	justify-content: space-evenly;
+	align-items: center;
+
+
+}
+
+.service{
+	border: 1px solid #777777;
+    border-radius: 10px;
+    background-color: rgba(249, 249, 255, 0.102);
+    padding: 31px 40px 37px;
+    color: #fff;
+    margin-bottom: 30px;
+	position: relative;
+    min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
 }
