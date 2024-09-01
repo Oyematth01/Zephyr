@@ -1,0 +1,243 @@
+{% extends 'base.html' %}
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+<section class="hero_area">
+	<video autoplay muted loop id="background-video">
+		<source src="Videos\homepage-edits4.mp4" type="video/mp4">
+		Your browser does not support HTML5 video.
+	</video>
+	<div class="hero">
+		<div class="hero_content">
+			<h6>AWAY FROM MONOTONOUS LIFE</h6>
+			<h2>RELAX YOUR MIND</h2>
+			<p>
+				If you are looking at blank cassettes on the web, you may be very confused at the
+				<br>
+				difference in price. You may see some for as low as $.17 each.
+			</p>
+		</div class="hero_content">
+		<div class="hero_btn_area"><a href="#" class="hero_btn">GET STARTED</a></div>
+		<form action="#" method="post" class="booking_area">
+			<div class="booking_table">
+
+				<div>
+					<h2>BOOK
+						<br>
+						YOUR ROOM
+					</h2>
+				</div>
+
+				<div class="form_table_col">
+					<label>Arrival Date</label> <br>
+					<input type="date" placeholder="Arrival Date">
+					<br>
+					<label>Departure Date</label> <br>
+					<input type="date" placeholder="Departure Date">
+				</div>
+
+				<div class="form_table_col">
+					<label>Adults</label> <br>
+					<input type="number" placeholder="Adults">
+					<br>
+					<label>Children</label> <br>
+					<input type="number" placeholder="Children">
+				</div>
+
+				<div class="form_select_col">
+					<label>Room Type</label> <br>
+					<select>
+						<option value="" disabled selected>Select an option</option>
+						<option value="">Single Room</option>
+						<option value="">Single Deluxe Room</option>
+						<option value="">Double Deluxe Room</option>
+						<option value="">Honeymoon Suite</option>
+						<option value="">Villa Room</option>
+						<option value="">Executive Room</option>
+						<option value="">Triple Room</option>
+						<option value="">Bridal Suite</option>
+						<option value="">Standard Suite Room</option>
+						<option value="">King Room</option>
+						<option value="">Queen Room</option>
+						<option value="">Duplex Room</option>
+					</select>
+
+					<br>
+					<a href="" class="book_now_btn">BOOK NOW</a>
+				</div>
+
+			</div>
+	</div>
+</section>
+
+<section class="accommodation_area_container">
+<div class="accommodation_area">
+	<div class="accommodation_text_area">
+		<h2 class="acc_title">Hotel Accommodation</h2>
+		<p>We all live in an age that belongs to the young at heart. Life that is becoming extremely fast.</p>
+	</div>
+
+	<div class="accommodation_images_text">
+		<div class="accommodation_item">
+			<div class="hotel_img_area">
+				<img src="images\Pictures\The_double_deluxe_image (1).webp" alt="Double deluxe room">
+				<br>
+				<a href="#">Book Now</a>
+			</div>
+			<a href="#">
+				<h4 class="sec_h4">Double Deluxe Room</h4>
+			</a>
+			<h5>
+				$150
+				<small>/night</small>
+			</h5>
+		</div>
+		<div class="accommodation_item">
+			<div class="hotel_img_area">
+				<img src="images\Pictures\The_single_deluxe_image.webp" alt="Single Deluxe Room">
+				<br>
+				<a href="#">Book Now</a>
+			</div>
+			<a href="#">
+				<h4 class="sec_h4">Single Deluxe Room</h4>
+			</a>
+			<h5>
+				$200
+				<small>/night</small>
+			</h5>
+		</div>
+		<div class="accommodation_item">
+			<div class="hotel_img_area">
+				<img src="images\Pictures\executiveroom2_edited.jpg" alt="Executive Room">
+				<br>
+				<a href="#">Book Now</a>
+			</div>
+			<a href="#">
+				<h4 class="sec_h4">Executive Room</h4>
+			</a>
+			<h5>
+				$400
+				<small>/night</small>
+			</h5>
+		</div>
+
+		<div class="accommodation_item">
+			<div class="hotel_img_area">
+				<img src="images\Pictures\The_honeymoon_image.webp" alt="Honeymoon Room">
+				<br>
+				<a href="#">Book Now</a>
+			</div>
+			<a href="#">
+				<h4 class="sec_h4">Honeymoon Room</h4>
+			</a>
+			<h5>
+				$500
+				<small>/night</small>
+			</h5>
+		</div>
+	</div>
+</div>
+
+</section>
+
+<section class="facilities_area">
+<div class="overlay"></div>
+<div class="facilities_area_content">
+	<div class="facilities_content">
+		<h2>Zephyr Facilities</h2>
+		<p>Where convenience meets adventures.</p>
+	</div>
+	<div class="zephyr_services">
+		<div class="service">
+			<div class="facilities_icon">
+				<img src="images\Icons\restaurant.svg" alt="restaurant icon">
+				<h4 class="sec_h4">
+					Restaurant
+				</h4>
+			</div>
+			<p>
+			<h5>Experience Culinary Excellence</h5>
+			Indulge in a world of flavors at our on-site restaurants. 
+			Whether you crave authentic local cuisine or international dishes, Zephyr's culinary team delivers an exceptional dining experience. 
+			From breakfast to dinner, our restaurants offer a blend of fresh ingredients, innovative recipes, and elegant ambiance, making every meal a moment to savor.
+			</p>
+		</div>
+		<div class="service">
+			<div class="facilities_icon">
+				<img src="images\Icons\sport.svg" alt="sport icon">
+				<h4 class="sec_h4">
+					Sports Club
+				</h4>
+			</div>
+			<h5>Stay Active, Stay Fit</h5>
+			<p>Elevate your fitness routine at Zephyr's state-of-the-art Sports Club. Whether you're a seasoned athlete or just looking to stay active during your stay, our club offers top-notch facilities, including tennis courts, basketball, and a fully equipped gym. Keep your body in peak condition with expert trainers and the latest fitness equipment.</p>
+		</div>
+		<div class="service">
+			<div class="facilities_icon">
+				<img src="images\Icons\Swimming.svg" alt="Swimming icon">
+				<h4 class="sec_h4">
+					Swimming Pool
+				</h4>
+			</div>
+			<p>Dive into Luxury</p>
+			<p>Relax and unwind in Zephyr's pristine swimming pool, a serene oasis designed for your enjoyment. Whether you're taking a refreshing morning dip, lounging with a cocktail by the water, or enjoying a peaceful swim under the stars, our pool offers the perfect escape from the hustle and bustle.</p>
+		</div>
+		<div class="service">
+			<div class="facilities_icon">
+				<img src="images\Icons\rent_car.svg" alt="Rent car icon">
+				<h4 class="sec_h4">
+					Rent a car
+				</h4>
+			</div>
+			<h5>Explore with Ease</h5>
+			<p>Discover the local area with convenience and comfort by renting a car directly from Zephyr. Our rental service offers a range of vehicles to suit your needs, whether you're planning a short trip or a full day of exploration. Enjoy the freedom to travel at your own pace and make the most of your stay with our reliable and affordable car rental options.</p>
+		</div>
+		<div class="service">
+			<div class="facilities_icon">
+				<img src="images\Icons\Gymnast.svg" alt="Gymnast icon">
+				<h4 class="sec_h4">
+					Gymnesium
+				</h4>
+			</div>
+			<h5>Elevate Your Workout</h5>
+			<p>Maintain your fitness regime at Zephyr's modern gymnasium, fully equipped with the latest exercise machines and free weights. Our gym is designed to cater to all fitness levels, offering everything you need for a comprehensive workout. Whether you're in the mood for a quick cardio session or an intense weightlifting routine, Zephyr has you covered.</p>
+		</div>
+		<div class="service">
+			<div class="facilities_icon">
+				<img src="images\Icons\bar.svg" alt="Bar Icon">
+				<h4 class="sec_h4">
+					Bar
+				</h4>
+			</div>
+			<h5>Sip, Savor, Socialize</h5>
+			<p>Unwind after a long day at Zephyr's stylish bar, where premium drinks and a vibrant atmosphere await. Whether you prefer a classic cocktail, a glass of fine wine, or a local craft beer, our bartenders are ready to serve your favorite beverages. It's the perfect place to relax, mingle, and enjoy a taste of the good life.</p>
+		</div>
+	</div>
+</div>
+
+</section>
+
+<section class="about_area">
+<div class="about_content">
+	<h2>About Us
+		<br>
+		Our History
+		<br>
+		Mission & Vision
+	</h2>
+	<p>Established in [Year Established], Zephyr Hotel has been a beacon of comfort and luxury in the heart of [City/Location].
+		<br>We blend modern elegance with timeless charm to create a sanctuary where every guest feels at home. Our rich history is rooted in a commitment to exceptional service and personalized hospitality.
+		<br>
+		Our vision is to redefine the guest experience, crafting memorable stays that resonate long after departure. 
+		<br>At Zephyr, we strive to be the destination of choice, where every detail is designed to elevate your stay and create lasting memories.
+	</p>
+	<div class="request_btn"><a href="#">Request a Custom Price</a></div>
+</div>
+
+<div class="about_img">
+	<img srcset="images\Pictures\marinabay1.jpg 5x" alt="Img">
+</div>
+</section>
+{% endblock %}
