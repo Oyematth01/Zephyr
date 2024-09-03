@@ -4,20 +4,20 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="images/zephyr_logo_img.png">
+	<link rel="icon" href="{{ url_for('static', filename='images/zephyr_logo_img.png')}}">
 	<title>
 		{% block title %}
 
 		{% endblock %}
 	</title>
-	<link rel="stylesheet" href="zephyr\statics\CSS\styles.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
 
 </head>
 
 <body>
 		<header>
 			<nav>
-				<img src="images/ZEPHYR.jpg" alt="Zephyr" class="logo">
+			<image src="{{ url_for('static', filename='images/ZEPHYR.jpg')}}" alt="Zephyr" class="logo">
 				<div class="nav_item_container">
 					<ul class="nav_item">
 						<li><a href="">HOME</a></li>
@@ -51,11 +51,11 @@
 					Copyright © 2024 All rights reserved | Developed by Matthew Oyelami
 				</p>
 				<div class="social-media_icons">
-					<div class="media_icon"><a href="https://x.com/oyematth"><img src="images\Icons\Platform=X (Twitter), Color=Negative.svg" alt="Twitter"></a></div>
-					<div class="media_icon"><a href="https://www.instagram.com/stories/stella.akindele/"><img src="images\Icons\Platform=Instagram, Color=Negative.svg" alt="Instagram"></a></div>
-					<div class="media_icon"><a href="#"><img src="images\Icons\Platform=LinkedIn, Color=Negative.svg" alt="Linkedin"></a></div>
-					<div class="media_icon"><a href="#"><img src="images\Icons\Platform=Github, Color=Negative.svg" alt="Github"></a></div>
-					<div class="media_icon"><a href="#"><img src="images\Icons\Platform=Medium, Color=Negative.svg" alt="Medium"></a></div>
+					<div class="media_icon"><a href="{{ social_links.twitter }}"><img src="images\Icons\Platform=X (Twitter), Color=Negative.svg" alt="Twitter"></a></div>
+					<div class="media_icon"><a href="{{ social_links.instagram }}"><img src="images\Icons\Platform=Instagram, Color=Negative.svg" alt="Instagram"></a></div>
+					<div class="media_icon"><a href="{{ social_links.linkedin }}"><img src="images\Icons\Platform=LinkedIn, Color=Negative.svg" alt="Linkedin"></a></div>
+					<div class="media_icon"><a href="{{ social_links.github }}"><img src="images\Icons\Platform=Github, Color=Negative.svg" alt="Github"></a></div>
+					<div class="media_icon"><a href="{{ social_links.medium }}"><img src="images\Icons\Platform=Medium, Color=Negative.svg" alt="Medium"></a></div>
 					</div>
 			</div>
 		</div>
