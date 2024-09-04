@@ -6,7 +6,7 @@
 {% block content %}
 <section class="hero_area">
 	<video autoplay muted loop id="background-video">
-		<source src="zephyr\statics\Videos\homepage-edits4.mp4" type="video/mp4">
+		<source src="{{ url_for('static', filename='Videos/homepage-edits4.mp4')}}" type="video/mp4">
 		Your browser does not support HTML5 video.
 	</video>
 	<div class="hero">
@@ -82,7 +82,7 @@
 	<div class="accommodation_images_text">
 		<div class="accommodation_item">
 			<div class="hotel_img_area">
-				<img src="images\Pictures\The_double_deluxe_image (1).webp" alt="Double deluxe room">
+				<image src="{{ url_for('static', filename='images/Pictures/The_double_deluxe_image (1).webp')}}" alt="Double deluxe room">
 				<br>
 				<a href="#">Book Now</a>
 			</div>
@@ -96,7 +96,7 @@
 		</div>
 		<div class="accommodation_item">
 			<div class="hotel_img_area">
-				<img src="images\Pictures\The_single_deluxe_image.webp" alt="Single Deluxe Room">
+				<image src="{{ url_for('static', filename='images/Pictures/The_single_deluxe_image.webp')}}" alt="Single Deluxe Room">
 				<br>
 				<a href="#">Book Now</a>
 			</div>
@@ -110,7 +110,7 @@
 		</div>
 		<div class="accommodation_item">
 			<div class="hotel_img_area">
-				<img src="images\Pictures\executiveroom2_edited.jpg" alt="Executive Room">
+				<image src="{{ url_for('static', filename='images/Pictures/executiveroom2_edited.jpg')}}" alt="Executive Room">
 				<br>
 				<a href="#">Book Now</a>
 			</div>
@@ -125,7 +125,7 @@
 
 		<div class="accommodation_item">
 			<div class="hotel_img_area">
-				<img src="images\Pictures\The_honeymoon_image.webp" alt="Honeymoon Room">
+				<image src="{{ url_for('static', filename='images/Pictures/The_honeymoon_image.webp')}}" alt="Honeymoon Room">
 				<br>
 				<a href="#">Book Now</a>
 			</div>
@@ -152,7 +152,7 @@
 	<div class="zephyr_services">
 		<div class="service">
 			<div class="facilities_icon">
-				<img src="images\Icons\restaurant.svg" alt="restaurant icon">
+				<image src="{{ url_for('static', filename='images/Icons/restaurant.svg')}}" alt="restaurant icon">
 				<h4 class="sec_h4">
 					Restaurant
 				</h4>
@@ -166,7 +166,7 @@
 		</div>
 		<div class="service">
 			<div class="facilities_icon">
-				<img src="images\Icons\sport.svg" alt="sport icon">
+				<image src="{{ url_for('static', filename='images/Icons/sport.svg')}}" alt="sport icon">
 				<h4 class="sec_h4">
 					Sports Club
 				</h4>
@@ -176,7 +176,7 @@
 		</div>
 		<div class="service">
 			<div class="facilities_icon">
-				<img src="images\Icons\Swimming.svg" alt="Swimming icon">
+				<image src="{{ url_for('static', filename='images/Icons/Swimming.svg')}}" alt="Swimming icon">
 				<h4 class="sec_h4">
 					Swimming Pool
 				</h4>
@@ -186,7 +186,7 @@
 		</div>
 		<div class="service">
 			<div class="facilities_icon">
-				<img src="images\Icons\rent_car.svg" alt="Rent car icon">
+				<image src="{{ url_for('static', filename='images/Icons/rent_car.svg')}}" alt="Rent car icon">
 				<h4 class="sec_h4">
 					Rent a car
 				</h4>
@@ -196,7 +196,7 @@
 		</div>
 		<div class="service">
 			<div class="facilities_icon">
-				<img src="images\Icons\Gymnast.svg" alt="Gymnast icon">
+				<image src="{{ url_for('static', filename='images/Icons/Gymnast.svg')}}" alt="Gymnast icon">
 				<h4 class="sec_h4">
 					Gymnesium
 				</h4>
@@ -206,7 +206,7 @@
 		</div>
 		<div class="service">
 			<div class="facilities_icon">
-				<img src="images\Icons\bar.svg" alt="Bar Icon">
+				<image src="{{ url_for('static', filename='images/Icons/bar.svg')}}" alt="Bar Icon">
 				<h4 class="sec_h4">
 					Bar
 				</h4>
@@ -237,7 +237,7 @@
 </div>
 
 <div class="about_img">
-	<img srcset="images\Pictures\marinabay1.jpg 5x" alt="Img">
+	<image srcset="{{ url_for('static', filename='images/Pictures/marinabay1.jpg')}}" alt="Img">
 </div>
 </section>
 
