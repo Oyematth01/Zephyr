@@ -20,7 +20,7 @@ class LoginForm(FlaskForm):
 class BookingForm(FlaskForm):
     checkin = DateField(label='Arrival Date', validators=[DataRequired()])
     checkout = DateField(label='Departure Date', validators=[DataRequired()])
-    Adults = IntegerField(Label='Adults', validators=[DataRequired(), NumberRange(min=0, max=6)])
+    Adults = IntegerField(label='Adults', validators=[DataRequired(), NumberRange(min=0, max=6)])
     children = IntegerField(label='Children', validators=[DataRequired(), NumberRange(min=0, max=6)])
     room_type = SelectField(label='Room Type', choices=[('Single Room', 'Single Room'), ('Single Deluxe Room', 'Single Deluxe Room'), 
                                                         ('Double Deluxe Room', 'Double Deluxe Room'), 
@@ -33,6 +33,6 @@ class BookingForm(FlaskForm):
     book_now = SubmitField("Book Now!")
 
 class ConfirmBookingForm(FlaskForm):
-    name = StringField(label='Enter your Full Name', validators=[DataRequired(), Length(min=5, max=60)], unique)
-    Email = EmailField(label='Email Address:', validators=[Email(), DataRequired()])
+    name = StringField(label='Enter your Full Name', validators=[DataRequired(), Length(min=5, max=60)], unique=True)
+    Email = EmailField(label='Email Address:', validators=[Email(), DataRequired()], unique=True)
     Occupation = StringField(label=' Enter your Occupation', validators=[DataRequired()])

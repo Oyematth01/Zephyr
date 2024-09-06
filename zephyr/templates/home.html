@@ -19,18 +19,18 @@
 				difference in price. You may see some for as low as $.17 each.
 			</p>
 		</div class="hero_content">
-		<div class="hero_btn_area"><a href="#booking_form" class="hero_btn">GET STARTED</a></div>
+		<div class="hero_btn_area"><a href="{{ url_for('booking_page')}}" class="hero_btn">GET STARTED</a></div>
 
-		
-		<div class="booking_table" id="#booking_form">
-			<div>
-				<h2>BOOK
-					<br>
-					YOUR ROOM
-				</h2>
-			</div>
 
-			<form action="#" method="post" class="booking_area">
+		<div class="booking_area">
+			<form action="#" method="post" class="booking_table">
+				<div>
+					<h2>BOOK
+						<br>
+						YOUR ROOM
+					</h2>
+				</div>
+
 				<div class="form_table_col">
 					<label>Arrival Date</label> <br>
 					<input type="date" placeholder="Arrival Date">
@@ -239,6 +239,5 @@
 	<image srcset="{{ url_for('static', filename='images/Pictures/marinabay1.jpg')}}" alt="Img">
 </div>
 </section>
-
 
 {% endblock %}
