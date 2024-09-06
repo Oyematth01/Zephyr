@@ -18,9 +18,9 @@ class LoginForm(FlaskForm):
 
 
 class BookingForm(FlaskForm):
-    checkin = DateField(label='Arrival Date', validators=[DataRequired()])
-    checkout = DateField(label='Departure Date', validators=[DataRequired()])
-    Adults = IntegerField(label='Adults', validators=[DataRequired(), NumberRange(min=0, max=6)])
+    check_in = DateField(label='Arrival Date', validators=[DataRequired()])
+    check_out = DateField(label='Departure Date', validators=[DataRequired()])
+    adults = IntegerField(label='Adults', validators=[DataRequired(), NumberRange(min=0, max=6)])
     children = IntegerField(label='Children', validators=[DataRequired(), NumberRange(min=0, max=6)])
     room_type = SelectField(label='Room Type', choices=[('Single Room', 'Single Room'), ('Single Deluxe Room', 'Single Deluxe Room'), 
                                                         ('Double Deluxe Room', 'Double Deluxe Room'), 

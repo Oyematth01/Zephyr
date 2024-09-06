@@ -15,15 +15,17 @@ def home_page():
         "instagram": "https://www.instagram.com/oyematth/",
         "medium": "https://medium.com/@oyematth"
     }
-    return render_template('home.html', social_links=social_links)
+    form = BookingForm()
+    return render_template('home.html', social_links=social_links, form=form), social_links
 
 
 @app.route('/booking', methods=['GET', 'POST'])
 def booking_page():
+    social_links = home_page()
     form = BookingForm()
     if form.validate_on_submit():
         return redirect(url_for('confirm_booking', name=form.name.data, email=form.email.data, room_number=form.room_number.data))
-    return render_template('bookingform.html', form=form)
+    return render_template('bookingform.html', form=form, social_links=social_links)
 
 
 @app.route('/confirm_booking', methods=['GET', 'POST'])

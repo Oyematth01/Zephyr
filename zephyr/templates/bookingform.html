@@ -1,45 +1,39 @@
-<div class="booking_table" id="#booking_form">
-	<div>
-		<h2>BOOK
-			<br>
-			YOUR ROOM
-		</h2>
-	</div>
+{% extends 'base.html' %}
+{% block title %}
+Register Page
+{% endblock %}
 
-	<form action="#" method="post" class="booking_area">
+{% block content %}
+<div class="booking_area">
+	<form action="#" method="post" class="booking_table">
+		<div>
+			<h2>BOOK
+				<br>
+				YOUR ROOM
+			</h2>
+		</div>
+
 		<div class="form_table_col">
-			<label>Arrival Date</label> <br>
-			<input type="date" placeholder="Arrival Date">
+			{{ form.check_in.label() }}
+			{{ form.check_in() }}
 			<br>
-			<label>Departure Date</label> <br>
-			<input type="date" placeholder="Departure Date">
+			{{ form.check_out.label() }}
+			{{ form.check_out() }}
 		</div>
 		<div class="form_table_col">
-			<label>Adults</label> <br>
-			<input type="number" placeholder="Adults">
+			{{ form.adults.label() }}
+			{{ form.adults() }}
 			<br>
-			<label>Children</label> <br>
-			<input type="number" placeholder="Children">
+			{{ form.children.label() }}
+			{{ form.children() }}
 		</div>
 		<div class="form_select_col">
-			<label>Room Type</label> <br>
-			<select>
-				<option value="Select an option" disabled selected>Select an option</option>
-				<option value="Single Room">Single Room</option>
-				<option value="Single Deluxe Room">Single Deluxe Room</option>
-				<option value="Double Deluxe Room">Double Deluxe Room</option>
-				<option value="Honeymoon Suite">Honeymoon Suite</option>
-				<option value="Villa Room">Villa Room</option>
-				<option value="Executive Room">Executive Room</option>
-				<option value="Triple Room">Triple Room</option>
-				<option value="Bridal Suite">Bridal Suite</option>
-				<option value="Standard Suite Room">Standard Suite Room</option>
-				<option value="King Room">King Room</option>
-				<option value="Queen Room">Queen Room</option>
-				<option value="Duplex Room">Duplex Room</option>
-			</select>
+			{{ form.room_type.label() }}
+			{{ form.room_type() }}
 			<br>
 			<a href="" class="book_now_btn">BOOK NOW</a>
 		</div>
 	</form>
 </div>
+
+{% endblock %}
