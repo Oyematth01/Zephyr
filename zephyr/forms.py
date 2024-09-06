@@ -4,8 +4,8 @@ from wtforms.validators import Length, EqualTo, Email, DataRequired, ValidationE
 
 class RegisterForm(FlaskForm):
     name = StringField(label='Full Name', validator=[DataRequired()])
-    username = StringField(label='User Name:', validators=[Length(min=2, max=30), DataRequired()])
-    email_address = StringField(label='Email Address:', validators=[Email(), DataRequired()])
+    username = StringField(label='User Name:', validators=[Length(min=2, max=30), DataRequired()], unique=True)
+    email_address = StringField(label='Email Address:', validators=[Email(), DataRequired()], unique=True)
     password = PasswordField(label='Password:', validators=[Length(min=6), DataRequired()])
     confirm_password = PasswordField(label='Confirm Password:', validators=[EqualTo('password'), DataRequired()])
     submit = SubmitField(label='Create Account')
@@ -33,6 +33,6 @@ class BookingForm(FlaskForm):
     book_now = SubmitField("Book Now!")
 
 class ConfirmBookingForm(FlaskForm):
-    name = StringField(label='Enter your Full Name', validators=[DataRequired(), Length(min=5, max=60)])
+    name = StringField(label='Enter your Full Name', validators=[DataRequired(), Length(min=5, max=60)], unique)
     Email = EmailField(label='Email Address:', validators=[Email(), DataRequired()])
     Occupation = StringField(label=' Enter your Occupation', validators=[DataRequired()])
