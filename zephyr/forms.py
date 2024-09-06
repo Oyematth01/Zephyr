@@ -29,3 +29,4 @@ class BookingForm(FlaskForm):
                                                         ('Standard Suite Room', 'Standard Suite Room'), ('King Room', 'King Room'), 
                                                         ('Queen Room', 'Queen Room'), ('Duplex Room', 'Duplex Room')]
                             )
+    book_now = SubmitField
