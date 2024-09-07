@@ -15,23 +15,23 @@ Register Page
 
 		<div class="form_table_col">
 			{{ form.check_in.label() }}
-			{{ form.check_in() }}
+			{{ form.check_in(placeholder="Check In Date") }}
 			<br>
 			{{ form.check_out.label() }}
 			{{ form.check_out() }}
 		</div>
 		<div class="form_table_col">
 			{{ form.adults.label() }}
-			{{ form.adults() }}
+			{{ form.adults(placeholder="Number of  Adults") }}
 			<br>
 			{{ form.children.label() }}
-			{{ form.children() }}
+			{{ form.children(placeholder="Number of Children") }}
 		</div>
 		<div class="form_select_col">
 			{{ form.room_type.label() }}
 			{{ form.room_type() }}
 			<br>
-			<a href="" class="book_now_btn">BOOK NOW</a>
+			{{ form.book_now() }}
 		</div>
 	</form>
 </div>
