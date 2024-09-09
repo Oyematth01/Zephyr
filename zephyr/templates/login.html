@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Log In</title>
+	<!-- <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css"> -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css')}}">
+
+</head>
+<body>
+
+	<div class="login_page">
+		<div class="login_img">			
+			<img src="{{ url_for('static', filename='images/Pictures/login_img.jpg')}}" alt="Login Image">	
+		</div>
+
+		<div class="form_container">
+			<form action="#" method="get">
+				<span class="login_title">
+					Login to your Dashboard
+				</span>
+
+				<div class="input_wrap">
+					<input type="email" placeholder="Email" class="input_100">
+				</div>
+
+				<div class="input_wrap">
+					<input type="password" placeholder="Password" class="input_100">
+				</div>
+
+				<div class="remember_forgot_area">
+					<div class="remember_me">
+						<label for="remember_me">
+							<input type="checkbox" name="Remember me" id="remember_me">
+							Remember me
+						</label>
+					</div>
+					<div>
+						<a href="" class="fgt_pw">Forgot Password?</a>
+					</div>
+				</div>
+
+				<div class="login_btn">
+					<button class="btn">Log In</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

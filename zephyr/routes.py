@@ -18,8 +18,17 @@ def home_page():
     form = BookingForm()
     return render_template('home.html', social_links=social_links, form=form), social_links
 
+@app.route('/Sign_Up')
+def sign_up_page():
+    return render_template('register.html')
 
-@app.route('/booking', methods=['GET', 'POST'])
+@app.route('/Sign_In')
+def sign_in_page():
+    return render_template('login.html')
+
+
+
+@app.route('/Booking', methods=['GET', 'POST'])
 def booking_page():
     social_links = home_page()
     form = BookingForm()

@@ -323,7 +323,7 @@ select option{
 
 .facilities_area{
 	position: relative;
-	background-image: url('static/images/Pictures/facilites_bg.webp');
+	background-image: url('facilites_bg.webp');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: scroll;
