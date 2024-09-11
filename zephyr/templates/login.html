@@ -18,22 +18,24 @@
 
 		<div class="form_container">
 			<form action="#" method="get">
+				<!-- {{ form.hidden_tag() }} -->
 				<span class="login_title">
 					Login to your Dashboard
 				</span>
 
 				<div class="input_wrap">
-					<input type="email" placeholder="Email" class="input_100">
+					{{ form.email(placeholder="Email Address", class="input_100") }}
 				</div>
 
 				<div class="input_wrap">
-					<input type="password" placeholder="Password" class="input_100">
+					{{ form.password(placeholder="Password", class="input_100") }}
 				</div>
 
 				<div class="remember_forgot_area">
 					<div class="remember_me">
 						<label for="remember_me">
-							<input type="checkbox" name="Remember me" id="remember_me">
+							{{ form.remember_me(id='remember_me')}}
+							<!-- <input type="checkbox" name="Remember me" id="remember_me"> -->
 							Remember me
 						</label>
 					</div>
@@ -43,7 +45,7 @@
 				</div>
 
 				<div class="login_btn">
-					<button class="btn">Log In</button>
+					{{ form.login(class="btn")}}
 				</div>
 			</form>
 		</div>

@@ -20,11 +20,13 @@ def home_page():
 
 @app.route('/Sign_Up')
 def sign_up_page():
-    return render_template('register.html')
+    form = RegisterForm()
+    return render_template('register.html', form=form)
 
 @app.route('/Sign_In')
 def sign_in_page():
-    return render_template('login.html')
+    form = LoginForm()
+    return render_template('login.html', form=form)
 
 
 

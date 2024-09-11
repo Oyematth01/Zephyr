@@ -1,20 +1,22 @@
 from flask_wtf import FlaskForm
-from wtforms.fields import StringField, PasswordField, SubmitField, IntegerField, DateField, EmailField, SelectField, SubmitField 
+from wtforms.fields import StringField, PasswordField, SubmitField, IntegerField, DateField, EmailField, SelectField, SubmitField, BooleanField
 from wtforms.validators import Length, EqualTo, Email, DataRequired, ValidationError, NumberRange
 
 class RegisterForm(FlaskForm):
-    name = StringField(label='Full Name', validator=[DataRequired()])
-    username = StringField(label='User Name:', validators=[Length(min=2, max=30), DataRequired()], unique=True)
-    email_address = StringField(label='Email Address:', validators=[Email(), DataRequired()], unique=True)
+    name = StringField(label='Full Name:', validators=[DataRequired()])
+    username = StringField(label='User Name:', validators=[Length(min=2, max=20), DataRequired()])
+    email = StringField(label='Email Address:', validators=[Email(), DataRequired()])
     password = PasswordField(label='Password:', validators=[Length(min=6), DataRequired()])
     confirm_password = PasswordField(label='Confirm Password:', validators=[EqualTo('password'), DataRequired()])
+    terms = BooleanField('Agree with our')
     submit = SubmitField(label='Create Account')
 
 
 class LoginForm(FlaskForm):
-    username = StringField(label='User Name:', validators=[DataRequired()])
+    email = EmailField(label='Email Address:', validators=[DataRequired()])
     password = PasswordField(label='Password:', validators=[DataRequired()])
-    submit = SubmitField(label='Sign in')
+    remember_me = BooleanField('Remember me')
+    login = SubmitField('Log In')
 
 
 class BookingForm(FlaskForm):
