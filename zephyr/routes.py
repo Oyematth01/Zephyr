@@ -1,5 +1,5 @@
 from zephyr import app
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, flash
 from flask_wtf import FlaskForm
 from wtforms.fields import SubmitField
 from zephyr.forms import RegisterForm, LoginForm, BookingForm, ConfirmBookingForm
@@ -18,9 +18,17 @@ def home_page():
     form = BookingForm()
     return render_template('home.html', social_links=social_links, form=form), social_links
 
-@app.route('/Sign_Up')
+@app.route('/Sign_Up', methods=['GET', 'POST'])
 def sign_up_page():
     form = RegisterForm()
+    if form.validate_on_submit():
+        user_to_create = User(username=form.username.data,
+                              email=form.email.data,
+                              password=form.password.data)
+        return redirect(url_for('sign_in_page'))
+    if form.errors != {}:
+        for err_msg in form.errors.values():
+            flash(f'There  was an error  with creating an account: {err_msg}', category='danger')
     return render_template('register.html', form=form)
 
 @app.route('/Sign_In')

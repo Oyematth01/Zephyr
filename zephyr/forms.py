@@ -1,8 +1,22 @@
 from flask_wtf import FlaskForm
 from wtforms.fields import StringField, PasswordField, SubmitField, IntegerField, DateField, EmailField, SelectField, SubmitField, BooleanField
 from wtforms.validators import Length, EqualTo, Email, DataRequired, ValidationError, NumberRange
+# from zephyr.models import User
+
+
 
 class RegisterForm(FlaskForm):
+    def validate_username(self, username_to_check):
+        user = User.query.filter_by(username=username_to_check.data).first()
+        if user:
+            raise ValidationError('Username already exists! Please try a different username')
+
+    def validate_email_address(self, email_address_to_check):
+        email_address = User.query.filter_by(email_address=email_address_to_check.data).first()
+        if email_address:
+            raise ValidationError('Email Address already exists! Please try a different email address')
+
+
     name = StringField(label='Full Name:', validators=[DataRequired()])
     username = StringField(label='User Name:', validators=[Length(min=2, max=20), DataRequired()])
     email = StringField(label='Email Address:', validators=[Email(), DataRequired()])
@@ -12,11 +26,13 @@ class RegisterForm(FlaskForm):
     submit = SubmitField(label='Create Account')
 
 
+
 class LoginForm(FlaskForm):
     email = EmailField(label='Email Address:', validators=[DataRequired()])
     password = PasswordField(label='Password:', validators=[DataRequired()])
     remember_me = BooleanField('Remember me')
     login = SubmitField('Log In')
+
 
 
 class BookingForm(FlaskForm):
@@ -33,6 +49,7 @@ class BookingForm(FlaskForm):
                                                         ('Queen Room', 'Queen Room'), ('Duplex Room', 'Duplex Room')]
                             )
     book_now = SubmitField("Book Now!")
+
 
 class ConfirmBookingForm(FlaskForm):
     name = StringField(label='Enter your Full Name', validators=[DataRequired(), Length(min=5, max=60)], unique=True)
