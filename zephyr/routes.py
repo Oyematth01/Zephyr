@@ -4,17 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms.fields import SubmitField
 from zephyr.forms import RegisterForm, LoginForm, BookingForm, ConfirmBookingForm
-
-class Item(db.Model):
-    id = db.Column(db.Integer(), primary_key=True)
-    name = db.Column(db.String(length=30), nullable=False, unique=True)
-    price = db.Column(db.Integer(), nullable=False)
-    barcode = db.Column(db.String(length=12), nullable=False, unique=True)
-    description = db.Column(db.String(length=1024), nullable=False, unique=True)
-
-    def __repr__(self):
-        return f'Item {self.name}'
-
+from zephyr.models import User, Booking
 
 @app.route('/')
 @app.route('/home')
@@ -39,10 +29,12 @@ def sign_up_page():
             return redirect(url_for('sign_up_page'))
         
         #This is to create a new user
-        user = User(username=form.username.data,
+        user_to_create = User(name=form.name.data,
+                              username=form.username.data,
                               email=form.email.data,
                               password=form.password.data)
-                              
+        db.session.add(user_to_create)
+        db.session.commit()                
         return redirect(url_for('sign_in_page'))
     if form.errors != {}:
         for err_msg in form.errors.values():
@@ -82,6 +74,6 @@ def booking_complete():
 
 
 @app.route('/dashboard')
-def market_page():
-    items = Item.query.all()
+def dashboard_page():
+    items = Booking.query.all()
     return render_template('dashboard.html', items=items)

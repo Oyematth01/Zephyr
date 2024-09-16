@@ -8,7 +8,7 @@ class User(db.Model):
     username = db.Column(db.String(length=20), nullable=False, unique=True)
     email = db.Column(db.String(100), unique=True, nullable=False)
     password_hash = db.Column(db.String(128), nullable=False)
-    created_at = db.Column(db.DateTime, default=datetime.astimezone)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
     bookings = db.relationship('Booking', backref='owned_user', lazy=True)
 
     # Methods
@@ -26,7 +26,7 @@ class Booking(db.Model):
     check_in_date = db.Column(db.Date, nullable=False)
     check_out_date = db.Column(db.Date, nullable=False)
     total_cost = db.Column(db.Float, nullable=False)
-    created_at = db.Column(db.DateTime, default=datetime.astimezone)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     def __repr__(self):
         return f'Booking {self.name}'
