@@ -11,9 +11,7 @@
 
 <body>
 	<div class="sign_up">
-		<div class="sign_up_bg_color"></div>
-		<div class="form_block">
-			{% with messages = get_flashed_messages(with_categories=tue) %}
+		{% with messages = get_flashed_messages(with_categories=tue) %}
 			{% if messages %}
 				{% for message in messages %}
 				<div class="alert alert-{{ category }}" id="err_msg">
@@ -25,6 +23,8 @@
 				{% endfor %}
 			{% endif %}
 		{% endwith %}
+		<div class="sign_up_bg_color"></div>
+		<div class="form_block">
 			<div class="form_heading">
 				<h3>Register</h3>
 			</div>
