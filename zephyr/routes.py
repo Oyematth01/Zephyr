@@ -1,12 +1,9 @@
-from zephyr import app
+from zephyr import app, db
 from flask import render_template, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms.fields import SubmitField
 from zephyr.forms import RegisterForm, LoginForm, BookingForm, ConfirmBookingForm
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///zephyr.db'
-db = SQLAlchemy(app)
 
 class Item(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
@@ -42,10 +39,10 @@ def sign_up_page():
             return redirect(url_for('sign_up_page'))
         
         #This is to create a new user
-        user_to_create = User(username=form.username.data,
+        user = User(username=form.username.data,
                               email=form.email.data,
                               password=form.password.data)
-        flash('Account created successfully! Please log in.', 'success')
+                              
         return redirect(url_for('sign_in_page'))
     if form.errors != {}:
         for err_msg in form.errors.values():
