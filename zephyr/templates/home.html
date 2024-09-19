@@ -19,10 +19,10 @@
 				difference in price. You may see some for as low as $.17 each.
 			</p>
 		</div class="hero_content">
-		<div class="hero_btn_area"><a href="{{ url_for('booking_page')}}" class="hero_btn">GET STARTED</a></div>
+		<div class="hero_btn_area"><a href="#booking_form" class="hero_btn">GET STARTED</a></div>
 
 
-		<div class="booking_area">
+		<div class="booking_area" id="booking_form">
 			<form action="#" method="post" class="booking_table">
 				{{ form.hidden_tag() }}
 				<div>
@@ -226,4 +226,5 @@
 </div>
 </section>
 
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 {% endblock %}
