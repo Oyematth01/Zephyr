@@ -167,6 +167,11 @@ input{
 }
 
 #err_msg{
+	position: relative;
+	z-index: 3;
 	background-color: rgb(216, 69, 69);
 	color: #FFFFFF;
+	width: 25%;
+	text-align: center;
+	margin-left: 2%;
 }

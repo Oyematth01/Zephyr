@@ -1,5 +1,7 @@
 *{
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 html, body {
     height: 100%; 
@@ -31,10 +33,10 @@ header nav .nav_item_container .nav_item {
 	list-style-type: none;
 	padding: 0;
 	margin-right: 17%;
-  }
-   .nav_item_container{
+}
+.nav_item_container{
 	width: 50%;
-   }
+}
 
 .logo{
 	height: 3rem;
@@ -516,11 +518,13 @@ footer{
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 0%;
 
 }
 .footer{
 	margin-left: 5%;
 	margin-right: 5%;
+	margin-bottom: 0%;
 }
 
 .footer_content{

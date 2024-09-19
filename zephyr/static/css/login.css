@@ -92,7 +92,7 @@ input{
 	width: 25%;
     line-height: 1.4;
     /* display: block; */
-	background-color: pink;
+	background-color: white
 }
 
 
@@ -177,4 +177,15 @@ a:hover{
 	outline: none;
 	text-align: center;
 	cursor: pointer;
+}
+
+#err_msg{
+	position: relative;
+	z-index: 3;
+	background-color: rgb(216, 69, 69);
+	color: #FFFFFF;
+	width: 100%;
+	text-align: center;
+	margin-left: 2%;
+	margin-bottom: 5%;
 }

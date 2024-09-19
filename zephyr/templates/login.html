@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Log In</title>
-	<!-- <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css')}}">
 
 </head>
@@ -17,8 +17,21 @@
 		</div>
 
 		<div class="form_container">
-			<form action="#" method="get">
-				<!-- {{ form.hidden_tag() }} -->
+			{% with messages = get_flashed_messages(with_categories=tue) %}
+				{% if messages %}
+					{% for message in messages %}
+					<div class="alert alert-{{ category }}" id="err_msg">
+						<button type="button" class="m1-2 mb-1 close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						{{ message }}
+					</div>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+			
+			<form method="POST">
+				{{ form.hidden_tag() }}
 				<span class="login_title">
 					Login to your Dashboard
 				</span>
@@ -35,7 +48,6 @@
 					<div class="remember_me">
 						<label for="remember_me">
 							{{ form.remember_me(id='remember_me')}}
-							<!-- <input type="checkbox" name="Remember me" id="remember_me"> -->
 							Remember me
 						</label>
 					</div>

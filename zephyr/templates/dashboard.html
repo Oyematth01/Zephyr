@@ -1,21 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Dashboard</title>
-  </head>
-  <body>
-    <h1>Welcome, {{ user.name }}</h1>
-    <p>Here is your booking summary:</p>
-    <ul>
-      {% for booking in bookings %}
-      <li>
-        Booking ID: {{ booking.id }} - Room ID: {{ booking.room_id }} -
-        Check-in: {{ booking.check_in_date }} - Check-out: {{
-        booking.check_out_date }}
-      </li>
+{% extends 'base.html' %}
+{% block title %}
+    Dashboard Page
+{% endblock %}
+
+{% block extra_styles %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css')}}">
+{% endblock %}
+
+{% block content %}
+  {% with messages = get_flashed_messages(with_categories=tue) %}
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{ category }}" id="err_msg">
+          <button type="button" class="m1-2 mb-1 close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          {{ message }}
+        </div>
       {% endfor %}
-    </ul>
-  </body>
-</html>
+    {% endif %}
+  {% endwith %}
+  <h1>Here is your Dashboard</h1>
+{% endblock %}

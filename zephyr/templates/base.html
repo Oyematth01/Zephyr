@@ -11,6 +11,9 @@
 		{% endblock %}
 	</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+	{% block extra_styles %}
+
+	{% endblock %}
 
 </head>
 
@@ -20,12 +23,19 @@
 			<image src="{{ url_for('static', filename='images/ZEPHYR.jpg')}}" alt="Zephyr" class="logo">
 				<div class="nav_item_container">
 					<ul class="nav_item">
+						{% if current_user.is_authenticated %}
+						<li><a href="">HOME</a></li>
+						<li><a href="">DASHBOARD</a></li>
+						<li><a>Welcome, {{ current_user.username}}</a></li>
+						<li><a href="{{ url_for('logout_Page')}}">LOGOUT</a></li>
+						{% else %}
 						<li><a href="">HOME</a></li>
 						<li><a href="">ABOUT US</a></li>
 						<li><a href="">ACCOMMODATION</a></li>
 						<li><a href="">GALLERY</a></li>
 						<li><a href="">CONTACT</a></li>
 						<li><a href="{{ url_for('sign_in_page')}}">Sign in</a>/<a href="{{ url_for('sign_up_page')}}">Sign up</a></li>
+						{% endif %}
 					</ul>
 				</div>
 
