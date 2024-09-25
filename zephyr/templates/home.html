@@ -23,7 +23,7 @@
 
 
 		<div class="booking_area" id="booking_form">
-			<form action="#" method="post" class="booking_table">
+			<form method="post" action="{{ url_for('home_page') }}" class="booking_table">
 				{{ form.hidden_tag() }}
 				<div>
 					<h2>BOOK
@@ -50,7 +50,7 @@
 					{{ form.room_type.label() }}
 					{{ form.room_type() }}
 					<br>
-					<a href="" class="book_now_btn">BOOK NOW</a>
+					{{ form.book_now(class="btn", type="submit") }}
 				</div>
 			</form>
 		</div>
@@ -95,7 +95,7 @@
 		</div>
 		<div class="accommodation_item">
 			<div class="hotel_img_area">
-				<image src="{{ url_for('static', filename='images/Pictures/executiveroom2_edited.jpg')}}" alt="Executive Room">
+				<image src="{{ url_for('static', filename='images/Pictures/executiveroom1.jpg')}}" alt="Executive Room">
 				<br>
 				<a href="#">Book Now</a>
 			</div>

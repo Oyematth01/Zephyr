@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms.fields import StringField, PasswordField, SubmitField, IntegerField, DateField, EmailField, SelectField, SubmitField, BooleanField
+from wtforms.fields import StringField, PasswordField, SubmitField, IntegerField, TimeField, DateField, DateTimeField, EmailField, SelectField, SubmitField, BooleanField, RadioField, TextAreaField
 from wtforms.validators import Length, EqualTo, Email, DataRequired, ValidationError, NumberRange
 from zephyr.models import User
 
@@ -48,10 +48,29 @@ class BookingForm(FlaskForm):
                                                         ('Standard Suite Room', 'Standard Suite Room'), ('King Room', 'King Room'), 
                                                         ('Queen Room', 'Queen Room'), ('Duplex Room', 'Duplex Room')]
                             )
-    book_now = SubmitField("Book Now!")
+    book_now = SubmitField('Book Now!')
 
 
-class ConfirmBookingForm(FlaskForm):
-    name = StringField(label='Enter your Full Name', validators=[DataRequired(), Length(min=5, max=60)], unique=True)
-    Email = EmailField(label='Email Address:', validators=[Email(), DataRequired()], unique=True)
-    Occupation = StringField(label=' Enter your Occupation', validators=[DataRequired()])
+class Confirm_Booking_Form(FlaskForm):
+    first_name = StringField(label='First Name', validators=[DataRequired(), Length(min=5, max=20)])
+    last_name = StringField(label='Last Name', validators=[DataRequired(), Length(min=5, max=20)])
+    email = EmailField(label='Email Address:', validators=[Email(), DataRequired()])
+    occupation = StringField(label=' Enter your Occupation', validators=[DataRequired()])
+    check_in = DateField(label='Arrival Date & Time', validators=[DataRequired()])
+    check_out = DateField(label='Departure Date & Time', validators=[DataRequired()])
+    check_in_time = TimeField('Check-in Time', format='%H:%M', validators=[DataRequired()])
+    check_out_time = TimeField('Check-out Time', format='%H:%M', validators=[DataRequired()])
+    adults = IntegerField(label='Number of Adults', validators=[DataRequired(), NumberRange(min=0, max=6)])
+    children = IntegerField(label='Number of Children', validators=[DataRequired(), NumberRange(min=0, max=6)])
+    room_type = SelectField(label='Room Type', choices=[('Single Room', 'Single Room'), ('Single Deluxe Room', 'Single Deluxe Room'), 
+                                                        ('Double Deluxe Room', 'Double Deluxe Room'), 
+                                                        ('Honeymoon Suite', 'Honeymoon Suite'), 
+                                                        ('Villa Room', 'Villa Room'), ('Executive Room', 'Executive Room'), 
+                                                        ('Triple Room', 'Triple Room'), ('Bridal Suite', 'Bridal Suite'), 
+                                                        ('Standard Suite Room', 'Standard Suite Room'), ('King Room', 'King Room'), 
+                                                        ('Queen Room', 'Queen Room'), ('Duplex Room', 'Duplex Room')]
+                            )
+    radio_field_yes = RadioField(label='Yes Please! - Pick me up on arrival', choices=[('yes', '')])
+    radio_field_no = RadioField(label='No Thanks! - I will make my own way there', choices=[('no', '')])
+    special_request = TextAreaField()
+    book_now = SubmitField('Book Now!')

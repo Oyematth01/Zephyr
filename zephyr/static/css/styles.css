@@ -6,8 +6,11 @@
 html, body {
 	scroll-behavior: smooth;
     height: 100%; 
-    margin: 0; 
-    padding: 0; 
+	width: 100vw;
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 body {
     line-height: 24px;
@@ -62,8 +65,7 @@ header nav .nav_item_container .nav_item {
 	right: 0;
 	bottom: 0;
 	margin-top: 0px;
-    min-height: 150%
-	transform: translate(-50%, -50%);
+	margin-right: 0px;
 }
 
 .hero{
@@ -180,7 +182,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
-	/* background-color: #f3c300; */
 }
 
 label{
@@ -213,8 +214,14 @@ select option{
 	
 }
 
-.form_select_col{
-	
+.form_select_col .btn{
+	background-color: #f3c300;
+	cursor: pointer;
+	margin-top: 15%;
+	color: white;
+	font-size: 18px;
+	font-weight: 500;
+	box-shadow: none;
 }
 
 .accommodation_area_container{

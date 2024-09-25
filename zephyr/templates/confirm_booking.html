@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sign Up</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/confirmbooking.css')}}">
+</head>
+<body>
+	<header>
+		<nav>
+		<image src="{{ url_for('static', filename='images/ZEPHYR.jpg')}}" alt="Zephyr" class="logo">
+			<div class="nav_item_container">
+				<ul class="nav_item">
+					{% if current_user.is_authenticated %}
+					<li><a href="{{ url_for('home_page')}}">HOME</a></li>
+					<li><a href="">DASHBOARD</a></li>
+					<li><a>Welcome, {{ current_user.username}}</a></li>
+					<li><a href="{{ url_for('logout_Page')}}">LOGOUT</a></li>
+					{% else %}
+					<li><a href="{{ url_for('home_page')}}">HOME</a></li>
+					<li><a href="">ABOUT US</a></li>
+					<li><a href="">ACCOMMODATION</a></li>
+					<li><a href="">GALLERY</a></li>
+					<li><a href="">CONTACT</a></li>
+					<li><a href="{{ url_for('sign_in_page')}}">Sign in</a>/<a href="{{ url_for('sign_up_page')}}">Sign up</a></li>
+					{% endif %}
+				</ul>
+			</div>
+
+		</nav>
+	</header>
+
+	<div class="container">	
+
+		{% with messages = get_flashed_messages(with_categories=tue) %}
+				{% if messages %}
+					{% for message in messages %}
+					<div class="alert alert-{{ category }}" id="err_msg">
+						<button type="button" class="m1-2 mb-1 close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						{{ message }}
+					</div>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+
+		<div class="img_cnt">
+			<image src="{{ url_for('static', filename='images/Pictures/Confirmbooking_header_img.png')}}" alt="Img"></image>
+		</div>
+
+		<form action="" method="post">
+			{{ form.hidden_tag() }}
+			<div class="header_cnt">
+				<h2>
+					Confirm Booking
+				</h2>
+				<p>Experience something new every moment</p>
+			</div>
+
+			<div class="input_cnt">
+				<div class="data_cnt1">
+					<div class="data_cnt1_1">
+						{{ form.first_name.label() }}
+						{{ form.first_name() }}
+					</div>
+
+					<div class="data_cnt1_1">
+						{{ form.last_name.label() }}
+						{{ form.last_name(id="ln_input") }}
+					</div>
+				</div>
+
+				<div class="data_cnt2">
+					{{ form.email.label() }}
+					{{ form.email(placeholder="ex: myname@example.com", class="email_input") }}
+				</div>
+			</div>
+
+			<div class="input_cnt">
+				<div class="data_cnt3">
+					{{ form.occupation.label() }}
+					{{ form.occupation() }}
+				</div>
+				<div class="data_cnt4">
+					{{ form.room_type.label() }}
+					<br>
+					{{ form.room_type() }}
+				</div>
+			</div>
+			<div class="input_cnt">
+				<div class="data_cnt5">
+					{{ form.adults.label() }}
+					<br>
+					{{ form.adults() }}
+				</div>
+				<div class="data_cnt5_1">
+					{{ form.children.label() }}
+					<br>
+					{{ form.children() }}
+				</div>
+			</div>
+
+			<div class="input_cnt">
+				<div class="data_cnt6">
+					{{ form.check_in.label() }}
+					<div class="arrival_input">
+						{{ form.check_in(id="date") }}
+						{{ form.check_in_time(id="time")}}
+					</div>
+				</div>
+
+				<div class="data_cnt6_1">
+					{{ form.check_out.label() }}
+					<div class="arrival_input">
+						{{ form.check_out(id="date") }}
+						{{ form.check_out_time(id="time")}}
+					</div>
+				</div>
+			</div>
+
+			<div class="foot_cnt">
+				<h3>Free pickup?</h3>
+				<div class="request">
+					<div class="request_cnt">
+						<div class="radio_cnt">
+							{% for subfield in form.radio_field_yes %}
+							<div>
+								{{ subfield() }} {{ subfield.label }}
+							</div>
+						{% endfor %}
+						</div>
+						<div class="radio_label">
+							{{ form.radio_field_yes.label() }}
+						</div>
+					</div>
+					<div class="request_cnt">
+						<div class="radio_cnt" >
+							{{ form.radio_field_no() }}
+						</div>
+						<div class="radio_label">
+							{{ form.radio_field_no.label() }}
+						</div>
+					</div>
+				</div>
+				<div class="text_area">
+					<h3>Special Requests</h3>
+					<div class="text_area_input">
+						{{ form.special_request(placeholder="Make your request known to us, type here!", id="text_input" ) }}
+					</div>
+				</div>
+			</div>
+
+			<div class="btn">
+				{{ form.book_now(id="btn") }}
+			</div>
+		</form>
+	</div>
+
+	<footer>
+		<div class="footer">
+			<div class="footer_content">
+				<p>
+					This web app is built as part of the Alx Holberton School Requirements to hone our skills on the
+					various languages we have been taught for the past nine months.
+					<h3>Technologies Used</h3>
+					The technologies used for the development of both the frontend and the backend are:
+					HTML, CSS, FLASK, and SQLALCHEMY
+				</p>
+			</div>
+			<div class="border_Line"></div>
+			<div class="footer_bottom">
+				<p>
+					Copyright © 2024 All rights reserved | Developed by Matthew Oyelami
+				</p>
+				<div class="social-media_icons">
+					<div class="media_icon"><a href="{{ social_links.twitter }}"><img src="{{ url_for('static', filename='images/Icons/Platform=X (Twitter).svg')}}" alt="Twitter"></a></div>
+					<div class="media_icon"><a href="{{ social_links.instagram }}"><img src="{{ url_for('static', filename='images/Icons/Platform=Instagram.svg')}}" alt="Instagram"></a></div>
+					<div class="media_icon"><a href="{{ social_links.linkedin }}"><img src="{{ url_for('static', filename='images/Icons/Platform=LinkedIn.svg')}}" alt="Linkedin"></a></div>
+					<div class="media_icon"><a href="{{ social_links.github }}"><img src="{{ url_for('static', filename='images/Icons/Platform=Github.svg')}}" alt="Github"></a></div>
+					<div class="media_icon"><a href="{{ social_links.medium }}"><img src="{{ url_for('static', filename='images/Icons/Platform=Medium.svg')}}" alt="Medium"></a></div>
+					</div>
+			</div>
+		</div>
+
+	</footer>
+</body>
+</html>

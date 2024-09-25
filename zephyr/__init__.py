@@ -13,7 +13,6 @@ login_manager = LoginManager(app)
 login_manager.login_view = "sign_in_page"
 login_manager.login_message_category= "info"
 
-
 from zephyr import routes
 
 with app.app_context():
